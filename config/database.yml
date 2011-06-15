@@ -11,7 +11,7 @@
 development:
   adapter: postgresql
   encoding: utf8
-  database: cp_migration_development
+  database: cp_migration_dev
   pool: 5
   username: postgres
   password: root
@@ -45,7 +45,7 @@ test:
 production:
   adapter: postgresql
   encoding: utf8
-  database: cp_migration_production
+  database: cp_migration_prod
   pool: 5
   username: postgres
   password: root
