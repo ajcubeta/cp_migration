@@ -1,15 +1,15 @@
 class DeviseCreateUsers < ActiveRecord::Migration
   def self.up
     create_table(:users) do |t|
-      t.database_authenticatable :null => false
-      t.recoverable
-      t.rememberable
-      t.trackable
+      # t.database_authenticatable :null => false
+      # t.recoverable
+      # t.rememberable
+      # t.trackable
 
       t.string :display_name
       t.string :email, :null => false
       t.string :crypted_password, :null => false
-      # t.string :password_salt, :null => false
+      t.string :password_salt, :null => false
       t.string :persistence_token, :null => false
       t.string :perishable_token, :null => false
 
@@ -164,7 +164,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
     add_index :users, :updated_at
     add_index :users, :status_updated_at
     add_index :users, :tagged
-    add_index :users, :reset_password_token, :unique => true
+    # add_index :users, :reset_password_token, :unique => true
   end
 
   def self.down
@@ -218,6 +218,8 @@ end
 # # add_index :users, :authentication_token, :unique => true
 
 
+
+
 # Best thing to DO: https://github.com/plataformatec/devise
 #
 # Migrating from other solutions
@@ -231,12 +233,25 @@ end
 # Dump careerpacific_production.sql to PostreSQL cp_migration_development mode
 # 3. Create migration to update :crypted_password and other attributes on devise.
 # 4. http://developer.postgresql.org/pgdocs/postgres/app-createuser.html
+# mysqldump --opt -u root -proot careerpacific_development users > cp_migration.sql
 
 # dropuser postgres
-# createuser postgres -p
+# createuser postgres -P
 # role: root
 # rake db:create:all
 # rake db:migrate
 
 # rvm list
 # ruby-1.9.2-head
+
+
+# http://www.sitepoint.com/site-mysql-postgresql-1/
+# http://www.xach.com/aolserver/mysql-to-postgresql.html
+
+# I know this is probably not the answer you are looking for, but: I don't believe in "automated" migration tools.
+# Take your existing SQL Scripts that create your database schema, do a search and replace for the necessary data types
+# (autonumber maps to serial which does all the sequence handling automagically for you), remove all the "engine=" stuff
+# and then run the new script against Postgres.
+# Dump the old database into flat files and import them into the target.
+# I have done this several times with sample databases that were intended for MySQL and it really doesn't take that long.
+# Probably just as long as trying all the different "automated" tools.

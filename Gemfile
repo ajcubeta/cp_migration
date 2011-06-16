@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.7'
+gem 'rails', '3.0.8'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -25,3 +25,12 @@ gem 'nifty-generators'
 #   gem 'hirb'
 #   gem 'awesome_print'
 # end
+
+
+# imacs-tech3:cp_migration tech3$ bundle install
+# Fetching source index for http://rubygems.org/
+# You have requested:
+#   rake = 0.8.7
+#
+# The bundle currently has rake locked at 0.9.2.
+# Try running `bundle update rake`
