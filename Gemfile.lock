@@ -28,6 +28,8 @@ GEM
       activemodel (= 3.0.8)
       activesupport (= 3.0.8)
     activesupport (3.0.8)
+    ar_dbcopy (0.1.0)
+      activerecord
     arel (2.0.10)
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
@@ -78,6 +80,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ar_dbcopy
   devise
   nifty-generators
   pg

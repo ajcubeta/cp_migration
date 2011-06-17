@@ -8,6 +8,7 @@ gem 'rails', '3.0.8'
 gem 'pg', :require => 'pg'
 gem 'devise'
 gem 'nifty-generators'
+gem 'ar_dbcopy'
 
 # group :development, :test do
 #   gem 'rails-footnotes'
