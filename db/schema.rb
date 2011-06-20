@@ -10,12 +10,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110615074126) do
+ActiveRecord::Schema.define(:version => 20110620091331) do
 
   create_table "users", :force => true do |t|
     t.string   "display_name"
     t.string   "email",                                                                                              :null => false
-    t.string   "crypted_password",                                                                                   :null => false
+    t.string   "encrypted_password",                                                                                 :null => false
     t.string   "password_salt",                                                                                      :null => false
     t.string   "persistence_token",                                                                                  :null => false
     t.string   "perishable_token",                                                                                   :null => false
@@ -99,6 +99,18 @@ ActiveRecord::Schema.define(:version => 20110615074126) do
     t.boolean  "delta",                                                                     :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "current_annum_salary",                       :precision => 10, :scale => 2
+    t.decimal  "expected_annum_salary_min",                  :precision => 10, :scale => 2
+    t.decimal  "expected_annum_salary_max",                  :precision => 10, :scale => 2
+    t.string   "work_pass_visa"
+    t.string   "remember_token"
+    t.string   "reset_password_token"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count"
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
   end
 
   add_index "users", ["admin"], :name => "index_users_on_admin"
@@ -118,6 +130,7 @@ ActiveRecord::Schema.define(:version => 20110615074126) do
   add_index "users", ["permanent_resident_id"], :name => "index_users_on_permanent_resident_id"
   add_index "users", ["race"], :name => "index_users_on_race"
   add_index "users", ["religion"], :name => "index_users_on_religion"
+  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
   add_index "users", ["staff"], :name => "index_users_on_staff"
   add_index "users", ["status"], :name => "index_users_on_status"
   add_index "users", ["status_updated_at"], :name => "index_users_on_status_updated_at"
