@@ -9,23 +9,22 @@ gem 'pg', :require => 'pg'
 gem 'devise', '1.3.4'
 gem 'nifty-generators'
 
-# group :development, :test do
-#   gem 'rails-footnotes'
-#
-#   gem 'rspec-rails'
-#   gem 'cucumber-rails'
-#   gem 'factory_girl_rails'
-#   gem 'capybara'
-#   gem 'webrat'
-#   gem 'database_cleaner'
-#   gem 'selenium-client'
-#
-#   # irb
-#   gem 'wirble'
-#   gem 'hirb'
-#   gem 'awesome_print'
-# end
+group :development, :test do
+  gem 'rails-footnotes'
 
+  gem 'rspec-rails'
+  gem 'cucumber-rails'
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'webrat'
+  gem 'database_cleaner'
+  gem 'selenium-client'
+
+  # irb
+  gem 'wirble'
+  gem 'hirb'
+  gem 'awesome_print'
+end
 
 # imacs-tech3:cp_migration tech3$ bundle install
 # Fetching source index for http://rubygems.org/
