@@ -1,2 +1,12 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1>Welcome to Career Pacific</h1>
+<p><a href="http://www.careerpacific.com" target="_new">http://www.careerpacific.com</a></p>
+<p>This site is a test to migrate Career Pacific <b>Rails 2.3.5</b> to <b>Rails 3.0.9</b></p>
+<p>from <u>MysqlDB</u> to <u>PostgreSQLDB</u></p>
+<p>from <u>AuthoLogic</u> authentication to <u>Devise</u> authentication</p>
+<br />
+
+<% if user_signed_in? %>
+  <p><%= link_to "Logout", destroy_user_session_path %></p>
+<% else %>
+  <p><%= link_to "Please login", new_user_session_path %></p>
+<% end %>

@@ -3,7 +3,7 @@ CpMigration::Application.routes.draw do
 
   devise_scope :user do
     get '/login'          => 'devise/sessions#new',     :as => 'new_user_session'
-    get '/logout'         => 'sessions#destroy', :as => 'destroy_user_session'
+    get '/logout'         => 'devise/sessions#destroy', :as => 'destroy_user_session'
     get '/password/reset' => 'devise/passwords#new',    :as => 'new_user_password'
   end
 
