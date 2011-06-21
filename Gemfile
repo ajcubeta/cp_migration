@@ -6,9 +6,8 @@ gem 'rails', '3.0.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg', :require => 'pg'
-gem 'devise'
+gem 'devise', '1.3.4'
 gem 'nifty-generators'
-gem 'ar_dbcopy'
 
 # group :development, :test do
 #   gem 'rails-footnotes'
